@@ -1,4 +1,18 @@
-user/static/assets/** linguist-vendored
-user/static/admin/** linguist-vendored
-static/bootstrap/** linguist-vendored
-static/vendor/** linguist-vendored
+# Ignore third-party frontend libraries when calculating language statistics
+user/static/assets/vendors/** linguist-vendored
+
+# Ignore fonts
+*.ttf linguist-vendored
+*.woff linguist-vendored
+*.woff2 linguist-vendored
+*.eot linguist-vendored
+
+# Ignore source maps
+*.map linguist-vendored
+
+# Ignore minified CSS & JS
+*.min.css linguist-vendored
+*.min.js linguist-vendored
+
+# Ignore SVG flags
+*.svg linguist-vendored
