@@ -1,0 +1,4 @@
+user/static/assets/** linguist-vendored
+user/static/admin/** linguist-vendored
+static/bootstrap/** linguist-vendored
+static/vendor/** linguist-vendored
