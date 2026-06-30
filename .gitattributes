@@ -1,18 +1,16 @@
-# Ignore third-party frontend libraries when calculating language statistics
+# Ignore third-party frontend assets
 user/static/assets/vendors/** linguist-vendored
 
-# Ignore fonts
-*.ttf linguist-vendored
-*.woff linguist-vendored
-*.woff2 linguist-vendored
-*.eot linguist-vendored
-
-# Ignore source maps
-*.map linguist-vendored
-
-# Ignore minified CSS & JS
+# Ignore generated assets
 *.min.css linguist-vendored
 *.min.js linguist-vendored
+*.map linguist-vendored
+
+# Ignore fonts
+*.woff linguist-vendored
+*.woff2 linguist-vendored
+*.ttf linguist-vendored
+*.eot linguist-vendored
 
 # Ignore SVG flags
-*.svg linguist-vendored
+user/static/assets/vendors/flag-icon-css/** linguist-vendored
