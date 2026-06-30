@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Japuria school</title>
+    <style>
+         i{
+            color: brown;
+         }
+    </style>
+   
+  </head>
+  <body>
+    {%extends 'parent.html'%}
+    {%load static%}
+    {% block slider%}
+    {% endblock %}
+    {%block body%}
+
+    
+
+<div class="row">
+  <div class="col-sm-12">
+<iframe class="w-100" style="height: 70vh;" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d263.812639758713!2d81.21536366866349!3d27.174355695425646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sSETH%20ANANDRAM%20JAIPURIA%20SCHOOL%20%20SADHU%20CAMPUS%2C%20BARABANKI%20%20%20656G%2B68W%2C%20Fatehpur%20-%20Mahmudabad%20-%20Bhagauli%20Rd%2C%20Jhansa%2C%20Karsabhari%2C%20Uttar%20Pradesh%20225305%2C%20India%20Lat%2027.211205%C2%B0%20Long%2081.175397%C2%B0!5e0!3m2!1sen!2sin!4v1717147346922!5m2!1sen!2sin"></iframe></div>
+</div>
+<div class="row">
+    
+    <div class="col-2"></div>
+    <div class="col-4">
+        <br><br>
+        <H1>Contact Us</H1>
+        <br>
+        <form method="post">
+          {%csrf_token%}
+        <input type="text" name = "name" placeholder="  STUDENT NAME * " required class="form-control my-3" style="width: 28vw;height: 5vh;">
+        
+        <input type="text" name="email" placeholder="  EMAIL *" required class="form-control my-3" style="width: 28vw;height: 5vh;">
+        
+        <input type="text" name="mobile" placeholder="  PHONE NUMBER *" required class="form-control my-3" style="width: 28vw;height: 5vh;">
+        
+        <input type="text" name="message" required placeholder=" Message" class="form-control my-3" style="width: 28vw;height: 5vh;">
+        
+        
+        <button type="submit"  class="border-0 rounded-2 btn btn-primary" >Submit</button>
+        
+      </form>
+    </div>
+    <div class="col-4">
+        <br><br>
+        <h3>Contact Info</h3>
+        <br>
+        <i class="fa-solid fa-location-dot"></i>
+        
+Address: Seth Anandram Jaipuria School, Sadhu Campus, Barabanki
+Village -Jhansapurwa, Post-Madanpur, Tehsil-Fatehpur, Barabanki. Pincode-225305
+       <br><br>
+
+       <i class="fa-solid fa-phone"></i>
+Phone: 9044554046, 9044554045
+<br><br>
+<i class="fa-solid fa-envelope"></i>
+
+admission.sadhucampus@jaipuria.school
+        
+       <br><br>
+       <h3>School Operational Timing  </h3>
+       <br>
+       <i class="fa-regular fa-clock"></i>
+       
+Summer : 08:00 am – 02:00 pm
+<br><br>
+<i class="fa-regular fa-clock"></i>
+Winters : 09:00 am – 03:00 pm
+
+
+    </div>
+    <div class="col-2"></div>
+</div>
+ <br><br>
+
+{% endblock %}
+   
+  </body>
+</html>

@@ -1,0 +1,42 @@
+{% extends "adminparent.html" %}
+{% block body %}
+<form action="" method="post">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">Edit Teacher</h1> 
+            {%csrf_token%}  
+              <div class="row ">
+                
+                <div class="col-sm-6"><input type="text" value="{{t.name}}" name = "name" placeholder="Enter Name " class="form-control my-3 py-3"></div>
+                <div class="col-sm-6"><input type="text" value="{{t.number}}" name = "number"  placeholder="Enter Father's Name" class="form-control my-3"></div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6"><input type="text" value="{{t.email}}" readonly name = "email" placeholder="Enter Email" required class="form-control my-3 bg-dark"></div>
+                <div class="col-sm-6"><input type="text"value="{{t.qua}}"  name = "qua" required placeholder="Enter Qualification" class="form-control bg-dark my-3"></div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6"><input type="text"  value="{{t.exp}}"  name = "exp" placeholder="Enter Experience" required class="form-control my-3"></div>
+                <div class="col-sm-6"><input type="text" value="{{t.tsalary}}" name = "tsalary" placeholder="Enter Salary"  class="form-control my-3"></div>
+              </div> 
+              <div class="row">
+                <div class="col-sm-6"><select name="sclass" class="form-select  ">
+                  <option value="" selected>-- Select Class --</option>
+                  {% for c in cl %}
+                  <option value="{{c.name}}">{{c.name}}</option>
+                  {% endfor %}
+              </select></div>
+                <div class="col-sm-6"><textarea name="address"  placeholder="Enter Address" class="form-control my-3">{{t.address}}</textarea></div>
+              </div>
+              <div class="row my-3 ">
+                <div class="col-sm-12 text-center">
+                <a href="">
+                <button type="submit" class="btn btn-success d-sm-inline-block ">Update</button></a>
+                </div>
+              </div>
+            
+
+        </div>
+    
+    </div>
+</form>
+{% endblock body %}

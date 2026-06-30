@@ -1,0 +1,29 @@
+{% extends "adminparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">Dashboard</h1>   
+        </div>
+        <div class="col-sm-4">
+            <div class="card shadow p-3">
+                <div class="text-center">
+                    <i class="fa-solid fa-user-graduate fs-1 text-warning"></i>
+                    <span class="ms-3 fs-5 fw-bolder">Students Enrolled</span>
+                </div>
+                <h2 class="text-center pt-3 text-warning">{{stu_count}}</h2>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card shadow p-3">
+                <div class="text-center"><i class="fa-solid fa-chalkboard-user text-primary fs-1"></i><span class="ms-3 fs-5 fw-bolder">Teachers</span></div>
+                <h2 class="text-center pt-3 text-primary">{{t_count}}</h2>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card shadow p-3">
+                <div class="text-center"><i class="fa-solid fa-users-rectangle text-success fs-1"></i><span class="ms-3 fs-5 fw-bolder">Classes</span></div>
+                <h2 class="text-center pt-3 text-success">{{cl_count}}</h2>
+            </div>
+        </div>
+    </div>
+{% endblock body %}

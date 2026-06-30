@@ -1,0 +1,29 @@
+{% extends "adminparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">Attendance</h1>   
+             <table class="table  text-light mx-auto">
+                <tr>
+                    <th>S.No</th>
+                    <th>Date</th>
+                    <th>Stundent Name</th>
+                    <th>Student Class</th>
+                    <th>Status</th>
+                </tr>
+                {%for a in attend %}
+                <tr>
+                    <td>
+                        {{forloop.counter}} </td>
+                        <td>{{a.date}}</td>
+                        <td>{{a.studentname}}</td>
+                        <td>{{a.sclass}}</td>
+
+                        <td>{{a.status}}</td>
+                    
+                </tr>
+                {%endfor%}
+             </table>
+        </div>
+    </div>
+{% endblock body %}

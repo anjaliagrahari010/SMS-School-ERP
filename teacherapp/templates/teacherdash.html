@@ -1,0 +1,25 @@
+{% extends "teacherparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">Teacher Home</h1>            
+        </div>
+        <div class="col-sm-6 text-center">
+            <div class="card shadow p-3">
+               <div> <i class="fa-solid fa-user-graduate fs-2 text-warning"></i><span class="ms-3 fs-5 fw-bold">Students_Enrolled
+            </span>
+            <h2 class="text-center pt-3 text-warning">{{stu_count}}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 text-center">
+            <div class="card shadow p-3">
+                <div> <i class="fa-solid fa-book-open-reader fs-2 text-success"></i><span class="ms-3 fs-5 fw-bold">Total_Subjects
+                </span>
+                <h2 class="text-center pt-3 text-success">{{sub_count}}</h2>
+                    </div>
+            </div>
+        </div>
+        
+    </div>
+    {%endblock%}

@@ -1,0 +1,46 @@
+{% extends "teacherparent.html" %}
+{% block body %}
+<div class="row">
+    <div class="col-sm-12">
+        <h1 style="text-align:center;">Profile</h1>   
+        <form method="post" class="row g-4" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="col-sm-12">
+                <div class="mx-auto" style="max-width: 200px;">
+                    {% if teacher.pic %}
+                        <img src="{{teacher.pic.url}}" alt="" class="w-100">
+                    {% endif %}
+                    <input type="file" name="pic" class="form-control">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <label for="">Name</label>
+                <input type="text"  readonly name="name" value="{{teacher.name}}" class="form-control bg-dark">
+            </div>
+            <div class="col-sm-6">
+                <label for="">Mobile No.</label>
+                <input type="text" readonly name="number" value="{{teacher.number}}" class="form-control " >
+            </div>
+            <div class="col-sm-6">
+                <label for="">Email</label>
+                <input type="text" name="email" value="{{teacher.email}}" class="form-control bg-dark"  readonly>
+            </div>
+            <div class="col-sm-6">
+                <label for="">Class Teacher</label>
+                <input type="text" name="tclass" value="{{teacher.tclass}}" class="form-control bg-dark"  readonly>
+            </div>
+            <div class="col-sm-6">
+                <label for="">Address</label>
+                <textarea name="address" class="form-control text-white "  >{{teacher.address}}</textarea>
+            </div>
+            <div class="col-sm-6">
+                <label for="">Joined Date</label>
+                <input type="text" name="created" value="{{teacher.created}}" class="form-control bg-dark"  readonly>
+            </div>
+            <div class="col-sm-12 text-center">
+                <button type="submit" class="btn btn-success">Update</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock body %}

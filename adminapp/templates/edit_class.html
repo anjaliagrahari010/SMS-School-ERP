@@ -1,0 +1,38 @@
+{% extends "adminparent.html" %}
+{% block body %}
+
+<div class="row">
+    <div class="col-sm-12">
+        <h1 style="text-align:center;">Classes</h1>   
+            <form method="post" class="row">
+                {% csrf_token %}
+                <table class="table text-light w-75 mx-auto">
+                    <tr>
+                        <td>Enter Class</td>
+                        <td><input type="text" name="name" id="" value="{{c.name}}" class="form-control bg-dark" readonly></td>
+                    </tr>
+                    <tr>
+                        <td>Enter Room No.</td>
+
+                        <td>
+                            <input type="text" name="roomno" class="form-control" value="{{c.roomno}}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Enter No. of Seats</td>
+                        <td><input type="text" name="seats" class="form-control" value="{{c.seats}}"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button type="submit" class="btn btn-success ">Update</button>
+                        </td>
+                        
+                        
+                    </tr>
+                </table>
+            </form>
+          
+    </div>
+</div>
+
+{% endblock body %}

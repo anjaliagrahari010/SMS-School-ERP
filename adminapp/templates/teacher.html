@@ -1,0 +1,93 @@
+{% extends "adminparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">Add Teachers</h1>   
+            <div class="row">
+                <div class="col-sm-12">
+                    <form method="post" class="p-3 text-light ">
+                        {% csrf_token %}
+                        <h3>Add Teacher </h3>
+                        {% if msg %}
+                        <div class="alert alert-dark" role="alert">
+                            {{msg}}
+                            <button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        {% endif %}
+                        <div class="row">
+                            <div class="col-sm-6"><input type="text" name="name" class="form-control my-2" placeholder="Enter Name"></div>
+                            <div class="col-sm-6"><input type="number" name="number" class="form-control my-2" placeholder="Enter Mobile No."></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6"><input type="text" name="email" class="form-control my-2" placeholder="Enter Email"></div>
+                            <div class="col-sm-6"><input type="text" name="password" class="form-control my-2" placeholder="Enter Password"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4"><input type="text" name="exp" class="form-control my-2" placeholder="Enter Experience"></div>
+                            <div class="col-sm-4"><input type="text" name="qua" class="form-control my-2" placeholder="Enter Qualification"></div>
+                            <div class="col-sm-4"><input type="text" name="tsalary" class="form-control my-2" placeholder="Enter Salary"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <select name="tclass" class="form-select my-2">
+                                    <option value="" selected>--- Select Class ---</option>
+                                    {% for c in cl %}
+                                        <option value="{{c.name}}">{{c.name}}</option>
+                                    {% endfor %}
+                                </select>
+                
+                            </div>
+                            <div class="col-sm-6">
+                                <textarea name="address" class="form-control my-2 text-light" placeholder="Enter Address"></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="row mt-2">
+                            <div class="col-sm-12 text-center">
+                                <button type="submit" class="btn btn-success d-inline-block mx-auto my-2 px-4">Add</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <h2 class="text-center my-3">Registerd  Teachers</h2>
+            <div class="row my-3 table-responsive">
+                <table class="table table-dark text-light">
+                    <tr>
+                        <td>S.no.</td>
+                        <td>Name</td>
+                        <td>Email</td>
+                        <td>Number</td>
+                        <td>Qualification</td>
+                        <td>Experience</td>
+                        <td>Salary</td>
+                        <td>Class</td>
+                        <td>Created</td>
+                        <td>Address</td>
+                        <td colspan="2">Action</td>
+                    </tr>
+                    {%for i in t%}
+                    <tr>
+                        <td>{{i.id}}</td>
+                        <td>{{i.name}}</td>
+                        <td>{{i.email}}</td>
+                        <td>{{i.number}}</td>
+                        <td>{{i.qua}}</td>
+                        <td>{{i.exp}}</td>
+                        <td>{{i.tsalary}}</td>
+                        <td>{{i.tclass}}</td>
+                        <td>{{i.created}}</td>
+                        <td>{{i.address}}</td>
+                        <td>
+                            <a href="{%url 'adminapp:edit_teacher' id=i.id %}" class="btn btn-primary">Edit</a>
+                        </td>
+                        <td>
+                            <a href="{% url 'adminapp:delteacher' id=i.id %}" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                    {%endfor%}
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock body %}

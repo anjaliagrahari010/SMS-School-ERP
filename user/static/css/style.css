@@ -1,0 +1,32 @@
+.dropdown:hover ul{
+    display: block;
+   
+    
+    
+}
+
+.fb, .insta , .you{
+    height: 50px;
+    width:50px;
+    position: fixed;
+    top:140px;
+    
+    
+}
+
+
+.fb{
+    background-color: rgb(5, 5, 109);
+
+}
+.insta{
+
+    background-color: rgb(161, 9, 161);
+    top:190px;
+}
+
+.you{
+    background-color: rgb(189, 9, 9);
+    top:240px;
+}
+
